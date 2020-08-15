@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">AppDrone</string>
+    <string name="dialog_message">hello</string>
+    <string name="dialog_title">noonehere</string>
+    <string name="motorCutSwitchP">CCW</string>
+    <string name="motorCutSwitch">CW</string>
+    <string name="text_dialog1">Address:</string>
+    <string name="text_dialog2">Port Control:</string>
+    <string name="text_dialog3">Port Video:</string>
+    <string name="addr_text">192.168.1.115</string>
+    <string name="port_num_text">5533</string>
+    <string name="port_video_text">5555</string>
+</resources>

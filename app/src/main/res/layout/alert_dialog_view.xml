@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:src="@drawable/header_logo"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:scaleType="fitCenter"
+        android:id="@+id/image_dialog"
+        android:contentDescription="@string/text_dialog1" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/text_dialog1"
+        android:layout_below="@id/image_dialog"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="4dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="23dp"
+            android:text="@string/text_dialog1"
+
+            />
+        <EditText
+            android:id="@+id/address_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="4dp"
+            android:autofillHints="@string/addr_text"
+            android:inputType="text"
+            android:hint="@string/addr_text"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_dialog1"
+        android:id="@+id/text_dialog2"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="4dp"
+            android:text="@string/text_dialog2"
+            />
+        <EditText
+            android:id="@+id/port_num"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="4dp"
+            android:fontFamily="sans-serif"
+            android:autofillHints="@string/port_num_text"
+            android:inputType="text"
+            android:hint="@string/port_num_text"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/text_dialog3"
+        android:layout_below="@+id/text_dialog2"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="11dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/text_dialog3" />
+        <EditText
+            android:id="@+id/port_video"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="sans-serif"
+            android:autofillHints="@string/port_video_text"
+            android:inputType="text"
+            android:hint="@string/port_video_text"/>
+    </LinearLayout>
+
+
+
+
+
+
+</RelativeLayout>
