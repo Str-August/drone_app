@@ -2,83 +2,209 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:stream="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/streamView"
+
+    <!--    <VideoView-->
+    <!--        android:id="@+id/streamView"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:src="@drawable/drone_background"-->
+    <!--        android:scaleType="centerCrop"-->
+    <!--        android:layout_alignParentBottom="true"-->
+    <!--        android:layout_alignParentTop="true"-->
+    <!--        android:layout_alignParentStart="true"-->
+    <!--        android:layout_alignParentEnd="true" />-->
+
+    <com.github.niqdev.mjpeg.MjpegSurfaceView
+        android:id="@+id/mjpeg_view"
+        stream:transparentBackground="true"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="2dp"
-        android:scaleType="centerCrop"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_height="match_parent" />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-    >
+
+        >
+        <Button
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/showSetting"
+            android:layout_marginEnd="10dp"
+            android:onClick="setting_onclick"
+            android:layout_centerVertical="true"
+            android:background="@drawable/setting"
+
+            />
         <Switch
+            android:id="@+id/powerButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/powerButton"
-            android:layout_alignParentEnd="true"
-            android:padding="10dp"
+            android:layout_toStartOf="@+id/showSetting"
             android:layout_margin="10dp"
-            android:text="On/Off"
             android:onClick="switchClick"
-            />
+            android:padding="10dp"
+            android:textStyle="normal"
+            android:textColor="@color/textMenu"
+            android:textSize="16sp"
+            android:text="On/Off" />
+
+<!--        <Switch-->
+<!--            android:id="@+id/motor_control"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:layout_toEndOf="@+id/flight_mode"-->
+<!--            android:padding="10dp"-->
+<!--            android:text="Motor"-->
+<!--            android:textStyle="normal"-->
+<!--            android:textColor="@color/textMenu"-->
+<!--            android:textSize="16sp"-->
+
+<!--            />-->
+
+<!--        <Switch-->
+<!--            android:id="@+id/flight_mode"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:padding="10dp"-->
+<!--            android:text="Mode 1"-->
+<!--            android:textStyle="normal"-->
+<!--            android:textColor="@color/textMenu"-->
+<!--            android:textSize="16sp"-->
+<!--            />-->
 
 
     </RelativeLayout>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
 
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginEnd="15dp"
-        android:id="@+id/motorCW"
-        android:text="@string/motorCutSwitch"
-        android:layout_above="@+id/joystick1"
-        android:layout_alignParentEnd="true"
-
-        />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:id="@+id/motorCCW"
-        android:layout_above="@+id/joystick1"
-        android:text="@string/motorCutSwitchP"
-        />
-    <uit.com.myapplication.Joystick
+<!--    <uit.com.myapplication.Joystick-->
+<!--        android:id="@+id/joystick1"-->
+<!--        android:layout_width="200dp"-->
+<!--        android:layout_height="200dp"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_margin="20dp"-->
+<!--        app:JV_borderColor="#581E00"-->
+<!--        app:JV_borderWidth="4dp"-->
+<!--        app:JV_buttonColor="#BCEDFF"-->
+<!--        app:JV_buttonSizeRatio="22%" />-->
+    <RelativeLayout
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_alignParentBottom="true"
-        app:JV_buttonColor="#FF6E40"
-        app:JV_buttonSizeRatio="15%"
-        app:JV_borderColor="#00796B"
-        app:JV_borderWidth="4dp"
-        android:id="@+id/joystick1"
-        />
-    <uit.com.myapplication.JoystickView
+        android:layout_margin="20dp"
+        android:background="@drawable/circle"
+
+        >
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:background="@drawable/up"
+            android:id="@+id/up_button"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+
+            />
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:id="@+id/down_button"
+            android:background="@drawable/down"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="30dp"
+            />
+        <Button
+            android:layout_width="30dp"
+            android:layout_height="50dp"
+            android:id="@+id/left_button"
+            android:background="@drawable/left"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="30dp"
+            />
+        <Button
+            android:layout_width="30dp"
+            android:layout_height="50dp"
+            android:id="@+id/right_button"
+
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/right"
+
+            android:layout_marginEnd="30dp"
+
+            />
+
+    </RelativeLayout>
+
+<!--    <uit.com.myapplication.JoystickView-->
+<!--        android:id="@+id/joystick2"-->
+<!--        android:layout_width="200dp"-->
+<!--        android:layout_height="200dp"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_margin="20dp"-->
+<!--        app:JV_borderColor="#581E00"-->
+<!--        app:JV_borderWidth="4dp"-->
+<!--        app:JV_buttonColor="#BCEDFF"-->
+<!--        app:JV_buttonSizeRatio="22%"-->
+
+
+
+<!--        />-->
+    <RelativeLayout
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+        android:background="@drawable/circle"
         android:layout_alignParentEnd="true"
-        app:JV_buttonColor="#FF6E40"
-        app:JV_buttonSizeRatio="15%"
-        app:JV_borderColor="#00796B"
-        app:JV_borderWidth="4dp"
-        android:id="@+id/joystick2"
 
 
+        >
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:background="@drawable/up"
+            android:id="@+id/up_buttonR"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
 
-        />
+            />
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:id="@+id/down_buttonR"
+            android:background="@drawable/down"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="30dp"
+            />
+        <Button
+            android:layout_width="30dp"
+            android:layout_height="50dp"
+            android:id="@+id/left_buttonR"
+            android:background="@drawable/left"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="30dp"
+            />
+        <Button
+            android:layout_width="30dp"
+            android:layout_height="50dp"
+            android:id="@+id/right_buttonR"
+
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/right"
+
+            android:layout_marginEnd="30dp"
+
+            />
+
+    </RelativeLayout>
 </RelativeLayout>

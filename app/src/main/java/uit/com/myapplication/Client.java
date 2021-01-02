@@ -22,9 +22,11 @@ public class Client {
     public boolean UNit() {
         // establish a connection
         try {
-            Socket sock = new Socket(addressC,portNum);
-            System.out.println("Connected");
-            socket = sock;
+            //System.out.println("Test before sock connect");
+            //socket.setSoTimeout(100000); // to reduce time waiting connection
+            socket = new Socket(addressC,portNum);
+            //System.out.println("Test Connected");
+            //socket = sock;
 
             // takes input from terminal
             input = new DataInputStream(socket.getInputStream());
@@ -90,7 +92,7 @@ public class Client {
 
     public  boolean getStatus()
     {
-        return this.socket.isOutputShutdown();
+        return statusSocket;
     }
     public Socket getSocket() {
         return socket;
